@@ -39,6 +39,13 @@ venv/
 ENV/
 env/
 
+# Temporary / Scratch
+/client.py
+/formatters.py
+/debug_tool.py
+/inspect_task.py
+/list_all_tools.py
+
 # IDE & Editor
 .vscode/
 .idea/
