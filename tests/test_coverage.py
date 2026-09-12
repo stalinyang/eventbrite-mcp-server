@@ -41,18 +41,20 @@ class TestAllToolsCoverage(unittest.TestCase):
                 data = {"venues": [{"id": "v1", "name": "Dallas Center", "address": {"city": "Dallas"}}]}
             elif "/venues/v1/" in url:
                 data = {"id": "v1", "name": "Dallas Center", "address": {"city": "Dallas"}}
-            elif "/events/search/" in url:
-                data = {"events": [{"id": "e1", "name": {"text": "Fair"}}]}
-            elif "/organizations/org1/events/" in url:
-                data = {"events": [{"id": "e1", "name": {"text": "Fair"}}]}
             elif "/events/e1/ticket_classes/" in url:
                 data = {"ticket_classes": [{"id": "tc1", "name": "Free Ticket", "free": True}]}
             elif "/events/e1/attendees/" in url:
                 data = {"attendees": [{"id": "a1", "profile": {"name": "Attendee 1"}}]}
-            elif "/orders/ord1/" in url:
-                data = {"id": "ord1", "name": "Order 1"}
             elif "/events/e1/orders/" in url:
                 data = {"orders": [{"id": "ord1", "name": "Order 1"}]}
+            elif "/events/e1/" in url:
+                data = {"id": "e1", "name": {"text": "Fair"}}
+            elif "/events/search/" in url:
+                data = {"events": [{"id": "e1", "name": {"text": "Fair"}}]}
+            elif "/organizations/org1/events/" in url:
+                data = {"events": [{"id": "e1", "name": {"text": "Fair"}}]}
+            elif "/orders/ord1/" in url:
+                data = {"id": "ord1", "name": "Order 1"}
             elif "/categories/" in url:
                 data = {"categories": [{"id": "101", "name": "Business & Professional"}]}
             elif "/formats/" in url:
