@@ -54,6 +54,11 @@ env/
 *~
 .DS_Store
 
+# Data & Cache
+/data/
+*.db
+*.sqlite3
+
 # Testing & Coverage
 .coverage
 htmlcov/

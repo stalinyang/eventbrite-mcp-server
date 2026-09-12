@@ -28,10 +28,11 @@ The server bridges LLMs directly to Eventbrite via FastMCP standard I/O transpor
 
 ---
 
-## Key Features
+## Features
 
-- **84 Comprehensive MCP Tools**: Full API v3 coverage across organizations, venues, draft/live events, ticket tiers, orders, check-ins, promo codes, and reports.
-- **Modular Domain Architecture**: Isolated tool modules (`users_orgs`, `events`, `ticketing`, `attendees_orders`, `discounts_webhooks`, `media_catalog`) for maintainability.
+- **87 Comprehensive MCP Tools**: Full API v3 coverage across organizations, venues, draft/live events, ticket tiers, orders, check-ins, promo codes, reports, plus SQLite-backed custom date-range query extensions.
+- **Custom Local Date-Range Search Engine**: Fills Eventbrite API's gap by caching organization events in a local SQLite database with delta sync (`order_by=changed_desc`) to execute lightning-fast date-range queries (`2025 to 2026`).
+- **Modular Domain Architecture**: Isolated tool modules (`users_orgs`, `events`, `ticketing`, `attendees_orders`, `discounts_webhooks`, `media_catalog`, `custom`) for maintainability.
 - **Token-Efficient Payload Pruning**: Strips bloated repetitive fields and normalizes paginated responses so LLMs receive dense, context-optimized JSON.
 - **Live Venue Check-In & Attendee Tracking**: Real-time barcode inspection, custom survey question retrieval, and venue attendee check-ins.
 - **Full Ticketing & Capacity Controls**: Manage free/paid admission packages, inventory tiers, ticket groups, and buyer checkout policies.
@@ -59,6 +60,7 @@ The server bridges LLMs directly to Eventbrite via FastMCP standard I/O transpor
 | **Attendees, Orders & Check-ins** | 9 | Attendee registration lookups, barcode details, live check-ins (`checkin_attendee`), order histories, and organization payouts. |
 | **Promotions, Questions & Webhooks** | 14 | Access/discount code management, custom & canned survey questions, and organization/user webhook subscription lifecycle. |
 | **Media, Taxonomy & Reports** | 13 | Category/subcategory taxonomies, format types, S3 media upload tokens, sales reports, attendee reports, and event display settings. |
+| **Custom Local Date Queries & Sync** | 3 | High-speed local SQLite cache, `order_by=changed_desc` delta sync, and indexed date-range queries (`search_organization_events_by_date`, `sync_organization_events`, `get_cached_event_statistics`). |
 
 ---
 
