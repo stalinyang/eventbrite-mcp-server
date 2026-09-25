@@ -45,6 +45,7 @@ env/
 /debug_tool.py
 /inspect_task.py
 /list_all_tools.py
+/sales_server.py
 
 # IDE & Editor
 .vscode/
